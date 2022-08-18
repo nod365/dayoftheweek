@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+<title>Тренер дня недели</title>
+<meta id="meta" name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="UTF-8">
+</head>
+<h1><div id=today></div></h1>
+<div id=score>Правильно: <b style="color: #0A0">0</b>  |  Неправильно: <b style="color: #F00">0</b></div>
+<br>
+<button onclick="day(0)">ПН</button>
+<button onclick="day(1)">ВТ</button>
+<button onclick="day(2)">СР</button>
+<button onclick="day(3)">ЧТ</button>
+<button onclick="day(4)">ПТ</button>
+<button onclick="day(5)">СБ</button>
+<button onclick="day(6)">ВС</button>
+
+<script>
+let daysnames = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+let daysnamesru = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье']
+let error = 0; success = 0;
+let today = Math.round(Math.random()*6);
+document.getElementById('today').innerHTML = daysnames[today]
+
+function day(a) {
+	if (a == today) {
+	//alert('correct '+today)
+	success++
+	} else {
+	error ++
+	alert('Неправильно! '+daysnames[today]+' переводится как '+daysnamesru[today])
+	}
+	document.getElementById('score').innerHTML = 'Правильно: <b style="color: #0A0">'+success+'</b>  |  Неправильно: <b style="color: #F00">'+error+'</b>'
+	let oldtoday = today;
+	for (i = 0; i=-1; i) {
+	today = Math.round(Math.random()*6);
+	if (oldtoday != today) {
+	break;
+	}
+	}
+document.getElementById('today').innerHTML = daysnames[today]
+}
+</script>
